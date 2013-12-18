@@ -176,7 +176,7 @@ IEEEPARstart{
 
 \end_inset
 
-R
+P
 \begin_inset ERT
 status collapsed
 
@@ -187,7 +187,7 @@ status collapsed
 
 \end_inset
 
-ecently
+roblem
 \begin_inset ERT
 status collapsed
 
@@ -198,12 +198,17 @@ status collapsed
 
 \end_inset
 
- intests in nature heavily have been growing on Artifical Inteligence field.
+ solving strategies inspired by nature has been a primary focus in AI for
+ a number of years.
  Neural Network, Evolutionary Algorithms and Ant Colony System are well
  known typical examples of them.
  Those are utilized not only for understanding how nature works but for
- finding better strategy to solve problems.
- In this project, we would like to focus on something.
+ finding better algorithms to solve problems.
+ 
+\end_layout
+
+\begin_layout Standard
+In this project, we would like to focus on something.
  We build model up, which works sothing.
 \end_layout
 

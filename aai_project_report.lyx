@@ -132,7 +132,7 @@ http://mirror.ctan.org/macros/latex/contrib/IEEEtran/IEEEtran_HOWTO.pdf
 \end_layout
 
 \begin_layout Title
-Search space reduction by using microRNA-EA
+Local Search Algorithm by using microRNA-list
 \end_layout
 
 \begin_layout Author
@@ -198,27 +198,38 @@ status collapsed
 
 \end_inset
 
- solving strategies inspired by nature has been a primary focus in AI for
- a number of years.
- Neural Network, Evolutionary Algorithms and Ant Colony System are well
- known typical examples of them.
- Those are utilized not only for understanding how nature works but for
- finding better algorithms to solve problems.
- 
+ solving strategies inspired by nature has been a primary focus in AI field
+ for a number of years.
+ These are utilized not only for understanding how nature works but for
+ finding better techniques to solve problems.
+ For example, Evolutionary Algorihms (EAs) have been widely used in the
+ field of optimization.
+ In fact, the use of evolutionary algorithms is generally well suited for
+ optimization problems.
 \end_layout
 
 \begin_layout Standard
-In this project, we would like to focus on something.
- We build model up, which works sothing.
+In this project, we introduce a optimization algorithms by using microRNA(abbr.
+ miRNA) list to improve the efficiency of exploration of search space.
+ The algorithm extends a general local search approachs to guide searching
+ direction and avoid searching the region likely having unfavourable solutions.
+ In our approach the techinique of escaping from unattractive area will
+ be implemented by miRNA list.
+ We show importance of this novel approach as solving Maximumcut(abbr.
+ Max-cut) problem.
 \end_layout
 
 \begin_layout Section
-Biological background : microRNAs
+Background 
+\end_layout
+
+\begin_layout Subsection
+microRNAs
 \end_layout
 
 \begin_layout Standard
-A microRNA (abbr.
- miRNA) is a small non-coding RNA molecule (ca.
+microRNA provide crucial inspiration in devising new appoach.
+ A microRNA is a small non-coding RNA molecule (ca.
  22 nucleotides) found in plants and animals, which functions in transcriptional
  and post-transcriptional regulation of gene expression.
  Encoded by eukaryotic nuclear DNA, miRNAs function via base-pairing with
@@ -247,16 +258,93 @@ key "key-1"
 
 \end_layout
 
+\begin_layout Subsection
+Maximumcut
+\end_layout
+
+\begin_layout Standard
+We prove that our appoarch is worth to use while solving Max-cut problem.
+ For a graph, a Max-cut is a cut whose size is at least the size of any
+ other cut.
+ The problem of finding a Max-cut in a graph is known as the max-cut problem.
+ The problem can be stated simply as follows.
+ One wants a subset S of the vertex set such that the number of edges between
+ S and the complementary subset is as large as possible.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2"
+
+\end_inset
+
+We define this number as fitness value of subset S and S'.
+ 
+\end_layout
+
 \begin_layout Section
 Model
 \end_layout
 
 \begin_layout Subsection
-Basic model : EA
+Local search algorithm
+\end_layout
+
+\begin_layout Standard
+We use typical local search algorithm which is steepest hill climbing to
+ optimize a target fitness function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+, where 
+\begin_inset Formula $x$
+\end_inset
+
+ is a solution vector of binaray values that indicate whether a particular
+ element belong to subset S or S'.
+ This is an iterative algorithm that attempts to find a better solution
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ by incrementally changing a single element in solution 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Where subset S and S' are given, fitness gain is defined as that which
+ is gap between fitness value of given subsets and fitness value of changed
+ subsets by moving an element from one subset to another.
+ All possible change are compared and the change causing biggest fitness
+ gain is accepted.
+ This incremental change is made to the new solution, repeating until no
+ further improvements can be found.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ is then said to be locally optimal.
+\end_layout
+
+\begin_layout Standard
+This algorithm is good for finding a local optimum, a solution that cannot
+ be improved by considering a neighbouring configuration, but it is not
+ guaranteed to find the best possible solution, which is the global optimum,
+ out of all possible solutions in the search space.
+ The characteristic that only local optima are guaranteed can be cured by
+ using multi-starts (repeated local search), or more complex schemes based
+ on iterations, like iterated local search, on memory, like reactive search
+ optimization and tabu search, or memory-less stochastic modifications,
+ like simulated annealing, or EAs like genetic algorithms.
 \end_layout
 
 \begin_layout Subsection
-miRNA-EA
+miRNA list
+\end_layout
+
+\begin_layout Standard
+The key function of microRNA is to restrict funtions of certain genes to
+ prevent to generate genetically vulnerable feature.
+ Like microRNA in nature, we would like to use miRNA-list to handle an abilities
+ of avoiding disadvantageous states.
 \end_layout
 
 \begin_layout Section
@@ -274,19 +362,16 @@ Experiment was conducted under Intel i5-3337U processor, 1.80GHz
 \end_layout
 
 \begin_layout Subsection
-cerntain condition
+Local search vs.
+ Local search+miRNA list
 \end_layout
 
 \begin_layout Subsection
-cerntain condition
+Inheritance of miRNA list
 \end_layout
 
 \begin_layout Section
 Result and Discussion
-\end_layout
-
-\begin_layout Section
-Reference
 \end_layout
 
 \begin_layout Bibliography
@@ -308,7 +393,7 @@ key "key-2"
 
 \end_inset
 
-
+http://en.wikipedia.org/wiki/Maximum_cut
 \end_layout
 
 \end_body

@@ -202,22 +202,22 @@ status collapsed
  for a number of years.
  These are utilized not only for understanding how nature works but for
  finding better techniques to solve problems.
- For example, Evolutionary Algorihms (EAs) have been widely used in the
- field of optimization.
+ For example, Evolutionary Algorihms(EAs) have been widely used in the field
+ of optimization.
  In fact, the use of evolutionary algorithms is generally well suited for
  optimization problems.
 \end_layout
 
 \begin_layout Standard
 In this project, we introduce a optimization algorithms by using microRNA(abbr.
- miRNA)s-pieces-list to improve the efficiency of exploration of search
+ miRNA)s-pieces-list to improve the efficiency of exploration in search
  space.
  The algorithm extends a general local search approachs to guide searching
- direction and avoid searching regions likely having unfavourable solutions.
- In our approach the techinique of escaping from unattractive area will
- be implemented by miRNAs-pieces-list.
- We end the report by demonstrating that miRNAs-pieces-list can be applied
- to Maximumcut(abbr.
+ direction and control where to visit in order to avoid heading to regions
+ likely having unfavourable solutions.
+ In our approach the techinique for escaping from unattractive area will
+ be implemented by miRNAs-pieces-list which is inspired by miRNA in nature.
+ We show that miRNAs-pieces-list can be applied to Maximumcut(abbr.
  Max-cut) problem with promising results.
 \end_layout
 
@@ -230,7 +230,7 @@ microRNAs
 \end_layout
 
 \begin_layout Standard
-microRNA provide crucial inspiration for devising new appoach.
+microRNA provide crucial inspiration for devising our new appoach.
  A microRNA is a small non-coding RNA molecule (ca.
  22 nucleotides) found in plants and animals, which functions in transcriptional
  and post-transcriptional regulation of gene expression.
@@ -279,7 +279,7 @@ key "key-2"
 
 \end_inset
 
-We define this number as fitness value of subset S and S'.
+ This number is targe fitness value of subset S and S'.
  
 \end_layout
 
@@ -314,7 +314,7 @@ We use typical local search algorithm which is steepest hill climbing to
 
 .
  Where subset S and S' are given, fitness gain is defined as that which
- is gap between fitness value of given subsets and fitness value of changed
+ is gap between the fitness value of given subsets and the one of changed
  subsets by moving an element from one subset to another.
  All possible change are compared and the change causing biggest fitness
  gain is accepted.
@@ -345,21 +345,23 @@ miRNAs-pieces-list
 \begin_layout Standard
 The key role of miRNA is to restrict the funtions of certain genes to prevent
  to generate genetically vulnerable feature.
- Like miRNA in nature, we would like to use miRNAs-pieces-list to handle
- the abilities of avoiding disadvantage .
+ We would like to use miRNAs-pieces-list to handle the abilities of avoiding
+ disadvantage.
+ In the same way that miRNA in nature restain some functions of mRNA, miRNAs-pie
+ces-list will restain some function of system to revisit meanless area.
+ 
 \end_layout
 
 \begin_layout Standard
 we use local search algorithm to reach to local optimum, then add the local
- optimum solution to miRNAs-pieces-list and set escaping count(EC) to 1
- which determine how futher next target solution will be from the local
- optimum solution.
- The local optimum is called as miRNA-piece.
+ optimum to miRNAs-pieces-list and set escaping count(EC) to 1 which determine
+ how futher next target solution will be from the local optimum.
+ The local optimum is then called as miRNA-piece.
  EC imprement is occured by revisitation a miRNA-piece that already has
- been uploaded to miRNAs-pieces-list so that search agent escape from locally
- wide attractor, the miRNA-piece.
+ been uploaded to miRNAs-pieces-list so that search agent can escape from
+ local attractor, the miRNA-piece.
  We assist miRNAs-pieces-list is approximately in apposition with particular
- set of miRNAs because Schema of a miRNA is shared by multiple miRNA-pieces.
+ set of miRNAs because schema of a miRNA is shared by multiple miRNA-pieces.
 \end_layout
 
 \begin_layout Section
@@ -372,13 +374,11 @@ Experiment was conducted under Intel i5-3337U processor, 1.80GHz
 \end_inset
 
 .
- we generate an instance randomly having 750 vertecies and non-weighted
- edges which means all weight of edges are equal and non zero.
+ We generate an instance having 750 vertecies and non-weighted edges - all
+ weights of edges is equal and non zero - randomly.
  Only one instance is used in this project.
- haha.
  Each trial is repeated ? times and averaged.
- Each time the system are iterated ? steps of local search to try to find
- best solution.
+ ? steps are iterated on each time to try to find locally optimal solution.
 \end_layout
 
 \begin_layout Subsection
@@ -387,24 +387,19 @@ Local search vs.
 \end_layout
 
 \begin_layout Standard
-local search decribed in subsection 3.A is compared with same scheme but
- using miRNAs-pieces-list
-\end_layout
-
-\begin_layout Standard
-to check whether this kind of scheme works well or not.
+In this experiment, local search decribed in subsection 3.A is compared with
+ almost same scheme but using miRNAs-pieces-list to check whether this kind
+ of scheme works well or not.
  so we set the experiment evironment like this.
 \end_layout
 
 \begin_layout Standard
-when the agent meet local optima former strategy doesnt do anything(just
- restart repeatedly) but record best fitness score to find best solution
- so far, whereas later one works slightly different like when the same situation
- is happened it check miRNAs-pieces-list whether uploaded and then if it
- does the system increase ec and escape from that local area using ec.
- how to eacape is quite easy.
- just perturbing the current solution.
- that s all.
+When the agent meet local optima, former strategy do nothing but just restart
+ and maintain optimal solution so far, whereas later one works slightly
+ different like when the same situation is happened it check miRNAs-pieces-list
+ whether uploaded and then if it does the system increase EC and escape
+ from that local area.
+ how to eacape is perturbing the current solution.
  
 \end_layout
 
@@ -413,13 +408,13 @@ Inheritance of miRNAs-pieces-list
 \end_layout
 
 \begin_layout Standard
-now we will compare two different starategy which are noraml miRNAs-pieces-list
+Now, we compare two different starategy, which are noraml miRNAs-pieces-list
  local search decribed above and miRNAs-pieces-list with inheritance local
  search.
- the later searching scheme has also simple difference.
- when the system meet terminate condition former one do nothing and when
- it restarts former one has empty list but later one recieve previous list
- like inheritance.
+ The later searching scheme has simple difference from former one.
+ When the system meet terminate condition former one do nothing and when
+ system is restarted, it owns empty list but later one recieve previous
+ list like inheritance.
 \end_layout
 
 \begin_layout Section

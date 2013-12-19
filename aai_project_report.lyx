@@ -214,7 +214,7 @@ In this project, we introduce a optimization algorithms by using microRNA(abbr.
  The algorithm extends a general local search approachs to guide searching
  direction and avoid searching the region likely having unfavourable solutions.
  In our approach the techinique of escaping from unattractive area will
- be implemented by miRNA list.
+ be implemented by miRNAs-pieces-list.
  We show importance of this novel approach as solving Maximumcut(abbr.
  Max-cut) problem.
 \end_layout
@@ -330,21 +330,33 @@ This algorithm is good for finding a local optimum, a solution that cannot
  guaranteed to find the best possible solution, which is the global optimum,
  out of all possible solutions in the search space.
  The characteristic that only local optima are guaranteed can be cured by
- using multi-starts (repeated local search), or more complex schemes based
- on iterations, like iterated local search, on memory, like reactive search
- optimization and tabu search, or memory-less stochastic modifications,
- like simulated annealing, or EAs like genetic algorithms.
+ using multi-starts (repeated local search), or more complex schemes such
+ as EAs.
+ 
 \end_layout
 
 \begin_layout Subsection
-miRNA list
+miRNAs-pieces-list
 \end_layout
 
 \begin_layout Standard
-The key function of microRNA is to restrict funtions of certain genes to
- prevent to generate genetically vulnerable feature.
- Like microRNA in nature, we would like to use miRNA-list to handle an abilities
- of avoiding disadvantageous states.
+The key role of miRNA is to restrict the funtions of certain genes to prevent
+ to generate genetically vulnerable feature.
+ Like miRNA in nature, we would like to use miRNAs-pieces-list to handle
+ the abilities of avoiding disadvantage .
+\end_layout
+
+\begin_layout Standard
+we use local search algorithm to reach to local optimum, then add the local
+ optimum solution to miRNAs-pieces-list and set escaping count(EC) to 1
+ which determine how futher next target solution will be from the local
+ optimum solution.
+ The local optimum is called as miRNA-piece.
+ EC imprement is occured by revisitation a miRNA-piece that already has
+ been uploaded to miRNAs-pieces-list so that search agent escape from locally
+ wide attractor, the miRNA-piece.
+ We assist miRNAs-pieces-list is approximately in apposition with particular
+ set of miRNAs because Schema of a miRNA is shared by multiple miRNA-pieces.
 \end_layout
 
 \begin_layout Section
@@ -363,11 +375,15 @@ Experiment was conducted under Intel i5-3337U processor, 1.80GHz
 
 \begin_layout Subsection
 Local search vs.
- Local search+miRNA list
+ Local search+miRNAs-pieces-list
+\end_layout
+
+\begin_layout Standard
+local search decribed in subsection 3.A 
 \end_layout
 
 \begin_layout Subsection
-Inheritance of miRNA list
+Inheritance of miRNAs-pieces-list
 \end_layout
 
 \begin_layout Section

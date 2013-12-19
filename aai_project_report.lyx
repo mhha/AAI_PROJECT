@@ -210,13 +210,15 @@ status collapsed
 
 \begin_layout Standard
 In this project, we introduce a optimization algorithms by using microRNA(abbr.
- miRNA) list to improve the efficiency of exploration of search space.
+ miRNA)s-pieces-list to improve the efficiency of exploration of search
+ space.
  The algorithm extends a general local search approachs to guide searching
- direction and avoid searching the region likely having unfavourable solutions.
+ direction and avoid searching regions likely having unfavourable solutions.
  In our approach the techinique of escaping from unattractive area will
  be implemented by miRNAs-pieces-list.
- We show importance of this novel approach as solving Maximumcut(abbr.
- Max-cut) problem.
+ We end the report by demonstrating that miRNAs-pieces-list can be applied
+ to Maximumcut(abbr.
+ Max-cut) problem with promising results.
 \end_layout
 
 \begin_layout Section
@@ -228,7 +230,7 @@ microRNAs
 \end_layout
 
 \begin_layout Standard
-microRNA provide crucial inspiration in devising new appoach.
+microRNA provide crucial inspiration for devising new appoach.
  A microRNA is a small non-coding RNA molecule (ca.
  22 nucleotides) found in plants and animals, which functions in transcriptional
  and post-transcriptional regulation of gene expression.
@@ -263,7 +265,8 @@ Maximumcut
 \end_layout
 
 \begin_layout Standard
-We prove that our appoarch is worth to use while solving Max-cut problem.
+We show importance of this novel approach as solving Maximumcut(abbr.
+ Max-cut) problem.
  For a graph, a Max-cut is a cut whose size is at least the size of any
  other cut.
  The problem of finding a Max-cut in a graph is known as the max-cut problem.
@@ -369,8 +372,13 @@ Experiment was conducted under Intel i5-3337U processor, 1.80GHz
 \end_inset
 
 .
- Each trial is repeated 5 times and averaged.
- Performance of the system is extremely data-driven.
+ we generate an instance randomly having 750 vertecies and non-weighted
+ edges which means all weight of edges are equal and non zero.
+ Only one instance is used in this project.
+ haha.
+ Each trial is repeated ? times and averaged.
+ Each time the system are iterated ? steps of local search to try to find
+ best solution.
 \end_layout
 
 \begin_layout Subsection
@@ -379,15 +387,67 @@ Local search vs.
 \end_layout
 
 \begin_layout Standard
-local search decribed in subsection 3.A 
+local search decribed in subsection 3.A is compared with same scheme but
+ using miRNAs-pieces-list
+\end_layout
+
+\begin_layout Standard
+to check whether this kind of scheme works well or not.
+ so we set the experiment evironment like this.
+\end_layout
+
+\begin_layout Standard
+when the agent meet local optima former strategy doesnt do anything(just
+ restart repeatedly) but record best fitness score to find best solution
+ so far, whereas later one works slightly different like when the same situation
+ is happened it check miRNAs-pieces-list whether uploaded and then if it
+ does the system increase ec and escape from that local area using ec.
+ how to eacape is quite easy.
+ just perturbing the current solution.
+ that s all.
+ 
 \end_layout
 
 \begin_layout Subsection
 Inheritance of miRNAs-pieces-list
 \end_layout
 
+\begin_layout Standard
+now we will compare two different starategy which are noraml miRNAs-pieces-list
+ local search decribed above and miRNAs-pieces-list with inheritance local
+ search.
+ the later searching scheme has also simple difference.
+ when the system meet terminate condition former one do nothing and when
+ it restarts former one has empty list but later one recieve previous list
+ like inheritance.
+\end_layout
+
 \begin_layout Section
 Result and Discussion
+\end_layout
+
+\begin_layout Standard
+the results of first experiment is like this.
+ It means like that statistically.
+ This is implied sth like sth.
+ blabla.
+\end_layout
+
+\begin_layout Standard
+the results of second experiment is like this.
+ It means like that statistically.
+ This is implied sth like sth.
+ blabla.
+\end_layout
+
+\begin_layout Standard
+Through this study we show it is helpful for solving Max-cut problem to
+ use mechanism from nature .
+\end_layout
+
+\begin_layout Standard
+We assume miRNAs-pieces-list is emcompassed by schema of miRNAs but couldn't
+ prove it but we remain this for future work.
 \end_layout
 
 \begin_layout Bibliography

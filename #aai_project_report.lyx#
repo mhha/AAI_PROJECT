@@ -1,0 +1,476 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass IEEEtran
+\begin_preamble
+% for subfigures/subtables
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding default
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement tbh
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "Your Title"
+\pdf_author "Your Name"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 2
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This is a template LyX file for articles to be submitted to journals of
+ the Institute of Electrical and Electronics Engineers (IEEE).
+ For general infos see 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://wiki.lyx.org/Examples/IEEE
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+You find the IEEEtran document class documentation here: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://mirror.ctan.org/macros/latex/contrib/IEEEtran/IEEEtran_HOWTO.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Local Search Algorithm by using microRNA-list
+\end_layout
+
+\begin_layout Author
+Myounghoon Ha, and
+\begin_inset space ~
+\end_inset
+
+Hansang Yoon
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The 
+\series bold
+
+\backslash
+IEEEPARstart
+\series default
+ command is needed in the first paragraph fo the document.
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+IEEEPARstart{
+\end_layout
+
+\end_inset
+
+P
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}{
+\end_layout
+
+\end_inset
+
+roblem
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ solving strategies inspired by nature has been a primary focus in AI field
+ for a number of years.
+ These are utilized not only for understanding how nature works but for
+ finding better techniques to solve problems.
+ For example, Evolutionary Algorihms (EAs) have been widely used in the
+ field of optimization.
+ In fact, the use of evolutionary algorithms is generally well suited for
+ optimization problems.
+\end_layout
+
+\begin_layout Standard
+In this project, we introduce a optimization algorithms by using microRNA(abbr.
+ miRNA)s-pieces-list to improve the efficiency of exploration of search
+ space.
+ The algorithm extends a general local search approachs to guide searching
+ direction and avoid searching regions likely having unfavourable solutions.
+ In our approach the techinique of escaping from unattractive area will
+ be implemented by miRNAs-pieces-list.
+ We end the report by demonstrating that miRNAs-pieces-list can be applied
+ to Maximumcut(abbr.
+ Max-cut) problem with promising results.
+\end_layout
+
+\begin_layout Section
+Background 
+\end_layout
+
+\begin_layout Subsection
+microRNAs
+\end_layout
+
+\begin_layout Standard
+microRNA provide crucial inspiration for devising new appoach.
+ A microRNA is a small non-coding RNA molecule (ca.
+ 22 nucleotides) found in plants and animals, which functions in transcriptional
+ and post-transcriptional regulation of gene expression.
+ Encoded by eukaryotic nuclear DNA, miRNAs function via base-pairing with
+ complementary sequences within mRNA molecules, usually resulting in gene
+ silencing via translational repression or target degradation.
+ miRNAs are well conserved in eukaryotic organisms and are thought to be
+ a vital and evolutionarily ancient component of genetic regulation.
+ Combinatorial regulation is a feature of miRNA regulation.
+ A given miRNA may have multiple different mRNA targets, and a given target
+ might similarly be targeted by multiple miRNAs.
+ miRNA research has revealed multiple roles in negative regulation (transcript
+ degradation and sequestering, translational suppression) and possible involveme
+nt in positive regulation (transcriptional and translational activation).
+ By affecting gene regulation, miRNAs are likely to be involved in most
+ biological processes Selbach et al.
+ and Baek et al.
+ indicated that a single miRNA may repress the production of hundreds of
+ proteins, but that this repression often is relatively mild (less than
+ 2-fold).
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Maximumcut
+\end_layout
+
+\begin_layout Standard
+We show importance of this novel approach as solving Maximumcut(abbr.
+ Max-cut) problem.
+ For a graph, a Max-cut is a cut whose size is at least the size of any
+ other cut.
+ The problem of finding a Max-cut in a graph is known as the max-cut problem.
+ The problem can be stated simply as follows.
+ One wants a subset S of the vertex set such that the number of edges between
+ S and the complementary subset is as large as possible.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2"
+
+\end_inset
+
+We define this number as fitness value of subset S and S'.
+ 
+\end_layout
+
+\begin_layout Section
+Model
+\end_layout
+
+\begin_layout Subsection
+Local search algorithm
+\end_layout
+
+\begin_layout Standard
+We use typical local search algorithm which is steepest hill climbing to
+ optimize a target fitness function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+, where 
+\begin_inset Formula $x$
+\end_inset
+
+ is a solution vector of binaray values that indicate whether a particular
+ element belong to subset S or S'.
+ This is an iterative algorithm that attempts to find a better solution
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ by incrementally changing a single element in solution 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Where subset S and S' are given, fitness gain is defined as that which
+ is gap between fitness value of given subsets and fitness value of changed
+ subsets by moving an element from one subset to another.
+ All possible change are compared and the change causing biggest fitness
+ gain is accepted.
+ This incremental change is made to the new solution, repeating until no
+ further improvements can be found.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ is then said to be locally optimal.
+\end_layout
+
+\begin_layout Standard
+This algorithm is good for finding a local optimum, a solution that cannot
+ be improved by considering a neighbouring configuration, but it is not
+ guaranteed to find the best possible solution, which is the global optimum,
+ out of all possible solutions in the search space.
+ The characteristic that only local optima are guaranteed can be cured by
+ using multi-starts (repeated local search), or more complex schemes such
+ as EAs.
+ 
+\end_layout
+
+\begin_layout Subsection
+miRNAs-pieces-list
+\end_layout
+
+\begin_layout Standard
+The key role of miRNA is to restrict the funtions of certain genes to prevent
+ to generate genetically vulnerable feature.
+ Like miRNA in nature, we would like to use miRNAs-pieces-list to handle
+ the abilities of avoiding disadvantage .
+\end_layout
+
+\begin_layout Standard
+we use local search algorithm to reach to local optimum, then add the local
+ optimum solution to miRNAs-pieces-list and set escaping count(EC) to 1
+ which determine how futher next target solution will be from the local
+ optimum solution.
+ The local optimum is called as miRNA-piece.
+ EC imprement is occured by revisitation a miRNA-piece that already has
+ been uploaded to miRNAs-pieces-list so that search agent escape from locally
+ wide attractor, the miRNA-piece.
+ We assist miRNAs-pieces-list is approximately in apposition with particular
+ set of miRNAs because Schema of a miRNA is shared by multiple miRNA-pieces.
+\end_layout
+
+\begin_layout Section
+Experiments 
+\end_layout
+
+\begin_layout Standard
+Experiment was conducted under Intel i5-3337U processor, 1.80GHz 
+\begin_inset Formula $\times4$
+\end_inset
+
+.
+ we generate an instance randomly having 750 vertecies and non-weighted
+ edges which means all weight of edges are equal and non zero.
+ Only one instance is used in this project.
+ haha.
+ Each trial is repeated ? times and averaged.
+ Each time the system are iterated ? steps of local search to try to find
+ best solution.
+\end_layout
+
+\begin_layout Subsection
+Local search vs.
+ Local search+miRNAs-pieces-list
+\end_layout
+
+\begin_layout Standard
+local search decribed in subsection 3.A is compared with same scheme but
+ using miRNAs-pieces-list
+\end_layout
+
+\begin_layout Standard
+to check whether this kind of scheme works well or not.
+ so we set the experiment evironment like this.
+\end_layout
+
+\begin_layout Standard
+when the agent meet local optima former strategy doesnt do anything(just
+ restart repeatedly) but record best fitness score to find best solution
+ so far, whereas later one works slightly different like when the same situation
+ is happened it check miRNAs-pieces-list whether uploaded and then if it
+ does the system increase ec and escape from that local area using ec.
+ how to eacape is quite easy.
+ just perturbing the current solution.
+ that s all.
+ 
+\end_layout
+
+\begin_layout Subsection
+Inheritance of miRNAs-pieces-list
+\end_layout
+
+\begin_layout Standard
+now we will compare two different starategy which are noraml miRNAs-pieces-list
+ local search decribed above and miRNAs-pieces-list with inheritance local
+ search.
+ the later searching scheme has also simple difference.
+ when the system meet terminate condition former one do nothing and when
+ it restarts former one has empty list but later one recieve previous list
+ like inheritance.
+\end_layout
+
+\begin_layout Section
+Result and Discussion
+\end_layout
+
+\begin_layout Standard
+the results of first experiment is like this.
+ It means like that statistically.
+ This is implied sth like sth.
+ blabla.
+\end_layout
+
+\begin_layout Standard
+the results of second experiment is like this.
+ It means like that statistically.
+ This is implied sth like sth.
+ blabla.
+\end_layout
+
+\begin_layout Standard
+Through this study we show it is helpful for solving Max-cut problem to
+ use mechanism from nature .
+\end_layout
+
+\begin_layout Standard
+We assume miRNAs-pieces-list is emcompassed by schema of miRNAs but couldn't
+ prove it but we remain this for future work.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "1"
+key "key-1"
+
+\end_inset
+
+http://en.wikipedia.org/wiki/MicroRNA
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "2"
+key "key-2"
+
+\end_inset
+
+http://en.wikipedia.org/wiki/Maximum_cut
+\end_layout
+
+\end_body
+\end_document

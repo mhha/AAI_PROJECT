@@ -132,7 +132,7 @@ http://mirror.ctan.org/macros/latex/contrib/IEEEtran/IEEEtran_HOWTO.pdf
 \end_layout
 
 \begin_layout Title
-Local Search Algorithm by using microRNA-list
+Search Algorithm by using microRNA system
 \end_layout
 
 \begin_layout Author
@@ -377,43 +377,47 @@ Experiment was conducted under Intel i5-3337U processor, 1.80GHz
  We generate an instance having 750 vertecies and non-weighted edges - all
  weights of edges is equal and non zero - randomly.
  Only one instance is used in this project.
- Each trial is repeated ? times and averaged.
- ? steps are iterated on each time to try to find locally optimal solution.
+ 
+\end_layout
+
+\begin_layout Standard
+There are three different types of experiments to show the effectiveness
+ of miRNA system.
+ Each experiments are runned ? times repeatedly and averaged the result.
+ 60 million steps are iterated on each time to try to find optimal solution.
+ 
 \end_layout
 
 \begin_layout Subsection
-Local search vs.
- Local search+miRNAs-pieces-list
+Multi-start local search
 \end_layout
 
 \begin_layout Standard
-In this experiment, local search decribed in subsection 3.A is compared with
- almost same scheme but using miRNAs-pieces-list to check whether this kind
- of scheme works well or not.
- so we set the experiment evironment like this.
+In this experiment, local search decribed in subsection 3.A is done.
+ When the agent meet a local optimum, this strategy do nothing but just
+ restart and maintain optimal solution so far
+\end_layout
+
+\begin_layout Subsection
+miRNA system
 \end_layout
 
 \begin_layout Standard
-When the agent meet local optima, former strategy do nothing but just restart
- and maintain optimal solution so far, whereas later one works slightly
- different like when the same situation is happened it check miRNAs-pieces-list
- whether uploaded and then if it does the system increase EC and escape
- from that local area.
+when the same situation is happened it check miRNAs-pieces-list whether
+ uploaded and then if it does the system increase EC and escape from that
+ local area.
  how to eacape is perturbing the current solution.
  
 \end_layout
 
 \begin_layout Subsection
-Inheritance of miRNAs-pieces-list
+miRNA system with Inheritance
 \end_layout
 
 \begin_layout Standard
-Now, we compare two different starategy, which are noraml miRNAs-pieces-list
- local search decribed above and miRNAs-pieces-list with inheritance local
- search.
- The later searching scheme has simple difference from former one.
- When the system meet terminate condition former one do nothing and when
- system is restarted, it owns empty list but later one recieve previous
+Now, miRNAs-pieces-list with inheritance local search.
+ The later searching scheme has simple difference from 4.B.
+ When the system meet ? condition, system is restarted and recieves previous
  list like inheritance.
 \end_layout
 
@@ -430,6 +434,13 @@ the results of first experiment is like this.
 
 \begin_layout Standard
 the results of second experiment is like this.
+ It means like that statistically.
+ This is implied sth like sth.
+ blabla.
+\end_layout
+
+\begin_layout Standard
+the results of last experiment is like this.
  It means like that statistically.
  This is implied sth like sth.
  blabla.
